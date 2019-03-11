@@ -51,7 +51,7 @@ This assumes you're running chameleon from this `example` directory.
 1. Set up chameleon to proxy calls to https://httpbin.org:
 
         $ mkdir httpbin
-        $ chameleon -data httpbin -port 6005 -verbose -url https://httpbin.org/ -hasher 'python ./hasher.py'
+        $ ~/Documents/github/chameleon/chameleon -data httpbin -host localhost:6005 -verbose -url https://httpbin.org/ -hasher 'python ./hasher.py'
 
 1. Instruct our application to use chameleon to make requests. We set the `TEST_SERVICE_URL` to chameleon:
 

@@ -82,7 +82,9 @@ func (fs DefaultFileSystem) ReadFile(myPath string) ([]byte, error) {
 		awsPath,
 		myPath)
 	cmd.Run()
-	return ioutil.ReadFile(myPath)
+	content, err := ioutil.ReadFile(myPath)
+	os.Remove(myPath)
+	return content, err
 }
 
 // A Cacher interface is used to provide a mechanism of storage for a given request and response.
